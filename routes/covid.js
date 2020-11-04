@@ -3,7 +3,7 @@ const express = require("express"),
 const axios = require('axios');
 
 // TASK 4
-app.get('/covid/country/name/:name', async (req, res) => {
+router.get('/covid/country/name/:name', async (req, res) => {
     var country = req.params.name;
     const agent = new https.Agent({
         rejectUnauthorized: false
@@ -37,7 +37,7 @@ app.get('/covid/country/name/:name', async (req, res) => {
 })
 
 // TASK 5
-app.get('/covid/country/code/:name', async (req, res) => {
+router.get('/covid/country/code/:name', async (req, res) => {
     var country = req.params.name;
     const agent = new https.Agent({
         rejectUnauthorized: false
@@ -74,7 +74,7 @@ app.get('/covid/country/code/:name', async (req, res) => {
 })
 
 // TASK 6
-app.get('/covid/country/search', async (req, res) => {
+router.get('/covid/country/search', async (req, res) => {
     var country = req.query.searchText;
 
     if (country.length <= 3 && country.length >= 2) {
