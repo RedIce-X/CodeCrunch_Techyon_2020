@@ -47,7 +47,6 @@ router.get('/country/code/:country_code', async (req, res) => {
         var data = await axios({
             url: 'https://restcountries.eu/rest/v2/alpha/' + country,
             method: 'get',
-
         })
 
         res.status(200).json({
@@ -61,7 +60,6 @@ router.get('/country/code/:country_code', async (req, res) => {
             "totalLanguages": data.data.languages.length,
             "totalCurrencies": data.data.currencies.length,
             "totalTimezones": data.data.timezones.length,
-
         })
     } catch (e) {
         if (e.response.status) {
@@ -81,20 +79,17 @@ router.get('/country/code/:country_code', async (req, res) => {
 //TASK 3
 router.get('/country/search', async (req, res) => {
     var country = req.query.searchText;
-    var url = 'https://restcountries.eu/rest/v2/name/' + country
+    var url = 'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true' + country
     if (/^\d+$/.test(country)) {
         url = 'https://restcountries.eu/rest/v2/callingcode/' + country
         try {
             var data = await axios({
-
                 url: url,
                 method: 'get',
-
             })
             console.log(data)
             res.status(200).json({
                 "name": data.data.name,
-
                 "capital": data.data[0].capital,
                 "region": data.data[0].region,
                 "population": data.data[0].population,
@@ -126,7 +121,6 @@ router.get('/country/search', async (req, res) => {
             console.log(data)
             res.status(200).json({
                 "name": data.data.name,
-
                 "capital": data.data.capital,
                 "region": data.data.region,
                 "population": data.data.population,
@@ -157,7 +151,6 @@ router.get('/country/search', async (req, res) => {
             console.log(data.data)
             res.status(200).json({
                 "name": data.data[0].name,
-
                 "capital": data.data[0].capital,
                 "region": data.data[0].region,
                 "population": data.data[0].population,
@@ -169,14 +162,11 @@ router.get('/country/search', async (req, res) => {
         } catch (e) {
             try {
                 var data = await axios({
-
                     url: '   https://restcountries.eu/rest/v2/capital/' + country,
                     method: 'get',
-
                 })
                 res.status(200).json({
                     "name": data.data[0].name,
-
                     "capital": data.data[0].capital,
                     "region": data.data[0].region,
                     "population": data.data[0].population,
