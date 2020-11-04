@@ -4,7 +4,7 @@ const axios = require('axios');
 
 // TASK 7
 router.get('/weather/city/:city_name', (req, res) => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${req.params.city_name}&APPID=7ac65faf3ca6cdc9a47ba1b3411e411b`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${req.params.city_name}&APPID=${process.env.WEATHER_API_KEY}`)
         .then(response => {
             return res.status(200).json({
                 "country": response.data.sys.country,
@@ -25,7 +25,7 @@ router.get('/weather/city/:city_name', (req, res) => {
 // TASK 8
 router.get('/weather/search', (req, res) => {
     if (req.query.pin_code) {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${req.query.pin_code},in&APPID=7ac65faf3ca6cdc9a47ba1b3411e411b`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${req.query.pin_code},in&APPID=${process.env.WEATHER_API_KEY}`)
             .then(response => {
                 return res.status(200).json({
                     "country": response.data.sys.country,
@@ -42,7 +42,7 @@ router.get('/weather/search', (req, res) => {
                 });
             })
     } else {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${parseFloat(req.query.latitude)}&lon=${parseFloat(req.query.longitude)}&APPID=7ac65faf3ca6cdc9a47ba1b3411e411b`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${parseFloat(req.query.latitude)}&lon=${parseFloat(req.query.longitude)}&APPID=${process.env.WEATHER_API_KEY}`)
             .then(response => {
                 return res.status(200).json({
                     "country": response.data.sys.country,

@@ -14,7 +14,7 @@ router.get('/covid/country/name/:name', async (req, res) => {
         method: 'GET',
         url: 'https://covid19-api.com/country?name=+' + country + '&format=json',
         headers: {
-            'x-rapidapi-key': '36a1d74624mshd5180482ffa6af6p1972c4jsn48487168f561',
+            'x-rapidapi-key': `${process.env.COVID_API_KEY}`,
             'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
         },
         httpsAgent: agent
@@ -47,7 +47,7 @@ router.get('/covid/country/code/:name', async (req, res) => {
         method: 'GET',
         url: 'https://covid19-api.com/country/code?code=+' + country + '&format=json',
         headers: {
-            'x-rapidapi-key': '36a1d74624mshd5180482ffa6af6p1972c4jsn48487168f561',
+            'x-rapidapi-key': `${process.env.COVID_API_KEY}`,
             'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
         },
         httpsAgent: agent
@@ -89,7 +89,7 @@ router.get('/covid/country/search', async (req, res) => {
         method: 'GET',
         url: url,
         headers: {
-            'x-rapidapi-key': '36a1d74624mshd5180482ffa6af6p1972c4jsn48487168f561',
+            'x-rapidapi-key': `${process.env.COVID_API_KEY}`,
             'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
         },
         httpsAgent: agent
