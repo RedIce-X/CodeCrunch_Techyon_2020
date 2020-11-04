@@ -66,7 +66,7 @@ router.get('/twitter/hashtag/:hashtag', (req, res) => {
 
 // TASK 11
 router.get('/twitter/location', (req, res) => {
-    axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=%20&geocode=${req.query.lattitude},${req.query.longitude},${req.query.radius}km&count=10`, config)
+    axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=%20&geocode=${req.query.latitude},${req.query.longitude},${req.query.radius}&count=10`, config)
         .then(response => {
             let recentTweets = [];
             let count = 0;
