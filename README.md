@@ -1,4 +1,4 @@
-# CodeCrunch_Techyon_2020
+# CodeCrunch Techyon 2020
 
 ## Team Details
 
