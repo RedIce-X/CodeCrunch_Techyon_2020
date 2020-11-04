@@ -10,6 +10,10 @@ app.use(countryRoutes);
 app.use(covidRoutes);
 app.use(twitterRoutes);
 
+app.get('', (req, res) => {
+  res.send('running')
+})
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, (req, res) => {
