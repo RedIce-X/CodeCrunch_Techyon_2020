@@ -79,7 +79,7 @@ router.get('/country/code/:country_code', async (req, res) => {
 //TASK 3
 router.get('/country/search', async (req, res) => {
     var country = req.query.searchText;
-    var url = 'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true' + country
+    var url = 'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true'
     if (/^\d+$/.test(country)) {
         url = 'https://restcountries.eu/rest/v2/callingcode/' + country
         try {
