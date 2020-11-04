@@ -11,7 +11,7 @@ Team Member 3: Raunak Naik : raunaknaik99@gmail.com: 9922411352<br />
 
 ## Project Details
 
-Hosted URL: https://codecrunch-techyon2k20.herokuapp.com/
+Hosted URL: https://codecrunch-techyon2k20.herokuapp.com/<br />
 Tech Stack used:
 1) Node.js - Backend Language
 2) ExpressJs - Node.js framework
