@@ -7,9 +7,11 @@ const axios = require('axios');
 
 const countryRoutes = require('./routes/country');
 const covidRoutes = require('./routes/covid');
+const weatherRoutes = require('./routes/weather');
 const twitterRoutes = require('./routes/twitter');
 app.use(countryRoutes);
 app.use(covidRoutes);
+app.use(weatherRoutes);
 app.use(twitterRoutes);
 
 app.get('', (req, res) => {

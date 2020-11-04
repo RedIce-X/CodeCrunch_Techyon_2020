@@ -34,7 +34,6 @@ router.get('/covid/country/name/:name', async (req, res) => {
             message: 'no records found'
         })
     }
-    console.log(data);
 })
 
 // TASK 5
@@ -71,18 +70,16 @@ router.get('/covid/country/code/:name', async (req, res) => {
             message: 'no records found'
         })
     }
-    console.log(data);
 })
 
 // TASK 6
 router.get('/covid/country/search', async (req, res) => {
     var country = req.query.searchText;
-
+    var url;
     if (country.length <= 3 && country.length >= 2) {
         url = 'https://covid19-api.com/country/code?code=+' + country + '&format=json'
     } else {
         url = 'https://covid19-api.com/country?name=+' + country + '&format=json'
-
     }
     const agent = new https.Agent({
         rejectUnauthorized: false
@@ -96,8 +93,6 @@ router.get('/covid/country/search', async (req, res) => {
             'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
         },
         httpsAgent: agent
-
-
     };
     try {
         var data = await axios(options)
@@ -107,7 +102,6 @@ router.get('/covid/country/search', async (req, res) => {
             "recovered": data.data[0].deaths,
             "critical": data.data[0].deaths,
             "deaths": data.data[0].critical
-
         })
     } catch (e) {
         res.status(404).json({
@@ -115,7 +109,6 @@ router.get('/covid/country/search', async (req, res) => {
             message: 'no records found'
         })
     }
-    console.log(data);
 })
 
 module.exports = router;
