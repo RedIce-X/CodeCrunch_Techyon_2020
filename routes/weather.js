@@ -16,7 +16,9 @@ router.get('/weather/city/:city_name', (req, res) => {
                 "longitude": response.data.coord.lon
             })
         }).catch(err => {
-            console.log(err.response.statusText);
+            return res.status(404).json({
+                "message": "weather data not found"
+            });
         })
 })
 
@@ -35,7 +37,9 @@ router.get('/weather/search', (req, res) => {
                     "longitude": response.data.coord.lon
                 })
             }).catch(err => {
-                console.log(err);
+                return res.status(404).json({
+                    "message": "weather data not found"
+                });
             })
     } else {
         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${parseFloat(req.query.latitude)}&lon=${parseFloat(req.query.longitude)}&APPID=7ac65faf3ca6cdc9a47ba1b3411e411b`)
@@ -50,7 +54,9 @@ router.get('/weather/search', (req, res) => {
                     "longitude": response.data.coord.lon
                 })
             }).catch(err => {
-                console.log(err);
+                return res.status(404).json({
+                    "message": "weather data not found"
+                });
             })
     }
 })
