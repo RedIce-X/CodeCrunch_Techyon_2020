@@ -24,7 +24,6 @@ router.get('/country/name/:name', async (req, res) => {
 
         })
     } catch (e) {
-        console.log(e.response.status)
         if (e.response.status) {
             res.status(e.response.status).json({
                 status: e.response.status,
@@ -48,7 +47,6 @@ router.get('/country/code/:country_code', async (req, res) => {
             url: 'https://restcountries.eu/rest/v2/alpha/' + country,
             method: 'get',
         })
-
         res.status(200).json({
             "name": data.data.name,
             "alpha2Code": data.data.alpha2Code,
@@ -87,9 +85,8 @@ router.get('/country/search', async (req, res) => {
                 url: url,
                 method: 'get',
             })
-            console.log(data)
             res.status(200).json({
-                "name": data.data.name,
+                "name": data.data[0].name,
                 "capital": data.data[0].capital,
                 "region": data.data[0].region,
                 "population": data.data[0].population,
@@ -118,7 +115,6 @@ router.get('/country/search', async (req, res) => {
                 url: url,
                 method: 'get',
             })
-            console.log(data)
             res.status(200).json({
                 "name": data.data.name,
                 "capital": data.data.capital,
@@ -148,7 +144,6 @@ router.get('/country/search', async (req, res) => {
                 url: url,
                 method: 'get',
             })
-            console.log(data.data)
             res.status(200).json({
                 "name": data.data[0].name,
                 "capital": data.data[0].capital,
