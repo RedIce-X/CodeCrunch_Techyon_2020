@@ -5,9 +5,9 @@
 Team Name: Leage of Shadows
 College Name: Padre Conceicao College of Engineering
 
-Team Member 1: Prathamesh Bhat : prathameshbhat199@gmail.com: 7798730432
-Team Member 2: Sairaj Dharwadkar : sairajdharwadkar@gmail.com: 8378058545
-Team Member 3: Raunak Naik : raunaknaik99@gmail.com: 9922411352
+Team Member 1: Prathamesh Bhat : prathameshbhat199@gmail.com: 7798730432<br />
+Team Member 2: Sairaj Dharwadkar : sairajdharwadkar@gmail.com: 8378058545<br />
+Team Member 3: Raunak Naik : raunaknaik99@gmail.com: 9922411352<br />
 
 ## Project Details
 
